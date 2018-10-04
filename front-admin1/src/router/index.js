@@ -45,7 +45,7 @@ export const constantRouterMap = [{
         import('@/views/dashboard/index'),
       meta: {
         title: '概览',
-        icon: 'form'
+        icon: 'tree'
       }
     }]
   },
@@ -88,6 +88,20 @@ export const constantRouterMap = [{
       meta: {
         title: '已传票据查询',
         icon: 'link'
+      }
+    }]
+  },
+  {
+    path: '/form',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'Form',
+      component: () =>
+        import('@/views/form/index'),
+      meta: {
+        title: 'Form',
+        icon: 'form'
       }
     }]
   },
