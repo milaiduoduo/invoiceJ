@@ -1,6 +1,6 @@
 <template>
 <div>
-        <el-form ref="form" :model="form" label-width="120px">
+        <el-form ref="form"  label-width="120px">
         <el-form-item label="发票代码">
             <el-input></el-input>
         </el-form-item>
@@ -21,7 +21,7 @@
             <el-input></el-input>
         </el-form-item>
         <el-form-item label="PDF上传">
-            <el-upload
+            <!-- <el-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
@@ -33,7 +33,7 @@
   :file-list="fileList">
   <el-button size="small" type="primary">点击上传</el-button>
   <div slot="tip" class="el-upload__tip">只能上传pdf文件，且大小不能超过500kb</div>
-</el-upload>
+</el-upload> -->
         </el-form-item>
         <el-form-item>
     <el-button type="primary" @click="onSubmit">立即上传红票</el-button>
@@ -44,7 +44,19 @@
 </template>
 
 <script type="text/ecmascript-6">
-export default {};
+export default {
+  methods: {
+    onSubmit() {
+      this.$reqGet("/user-login")
+        .then(res => {
+          console.log("登录成功返回：", res);
+        })
+        .catch(err => {
+          console.log("login err: ", err);
+        });
+    }
+  }
+};
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">

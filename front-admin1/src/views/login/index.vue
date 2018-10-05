@@ -92,6 +92,13 @@ export default {
             .dispatch("Login", this.loginForm)
             .then(() => {
               this.loading = false;
+              this.$reqGet("/user-login")
+                .then(res => {
+                  console.log("登录成功返回：", res);
+                })
+                .catch(err => {
+                  console.log("login err: ", err);
+                });
               this.$router.push({ path: this.redirect || "/" });
             })
             .catch(() => {
