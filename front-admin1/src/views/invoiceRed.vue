@@ -28,7 +28,7 @@
             </el-col>
             <el-col :offset="1" :span="10">
                 <el-form-item label="开票时间">
-                    <el-input></el-input>
+                    <el-date-picker v-model="value1" type="date" placeholder="选择日期"></el-date-picker>
                 </el-form-item>
             </el-col>
         </el-row>
